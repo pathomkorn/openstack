@@ -1,6 +1,6 @@
 # Single Node Deployment
 ## Packstack Installation
-* Login `ctrl.podX.ibmcloud.com` as `root` user
+* Login `ctrl.podX.openstack.io` as `root` user
 * Install `packstack` utility
 ```bash
 # yum install http://mirror.centos.org/centos/7.2.1511/cloud/x86_64/openstack-mitaka/centos-release-openstack-mitaka-1-3.el7.noarch.rpm
@@ -19,7 +19,7 @@ CONFIG_SWIFT_INSTALL=n
 CONFIG_CEILOMETER_INSTALL=n
 CONFIG_AODH_INSTALL=n
 CONFIG_GNOCCHI_INSTALL=n
-CONFIG_NTP_SERVERS=ntp.ibmcloud.com
+CONFIG_NTP_SERVERS=time.openstack.io
 CONFIG_NAGIOS_INSTALL=n
 CONFIG_KEYSTONE_ADMIN_PW=your_password
 CONFIG_NEUTRON_METERING_AGENT_INSTALL=n
@@ -96,11 +96,11 @@ memcached:                              active
 +----+------------------+------------------------+----------+---------+-------+----------------------------+-----------------+
 | Id | Binary           | Host                   | Zone     | Status  | State | Updated_at                 | Disabled Reason |
 +----+------------------+------------------------+----------+---------+-------+----------------------------+-----------------+
-| 4  | nova-cert        | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:34.000000 | -               |
-| 5  | nova-consoleauth | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:28.000000 | -               |
-| 6  | nova-scheduler   | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:32.000000 | -               |
-| 7  | nova-conductor   | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:36.000000 | -               |
-| 9  | nova-compute     | ctrl.podX.ibmcloud.com | nova     | enabled | up    | 2016-05-11T09:41:31.000000 | -               |
+| 4  | nova-cert        | ctrl.podX.openstack.io | internal | enabled | up    | 2016-05-11T09:41:34.000000 | -               |
+| 5  | nova-consoleauth | ctrl.podX.openstack.io | internal | enabled | up    | 2016-05-11T09:41:28.000000 | -               |
+| 6  | nova-scheduler   | ctrl.podX.openstack.io | internal | enabled | up    | 2016-05-11T09:41:32.000000 | -               |
+| 7  | nova-conductor   | ctrl.podX.openstack.io | internal | enabled | up    | 2016-05-11T09:41:36.000000 | -               |
+| 9  | nova-compute     | ctrl.podX.openstack.io | nova     | enabled | up    | 2016-05-11T09:41:31.000000 | -               |
 +----+------------------+------------------------+----------+---------+-------+----------------------------+-----------------+
 == Nova networks ==
 +--------------------------------------+---------------+------+
@@ -173,8 +173,8 @@ DEVICETYPE=ovs
 ```
 * Reconfigure hostname
 ```bash
-# hostnamectl set-hostname ctrl.podX.ibmcloud.com
+# hostnamectl set-hostname ctrl.podX.openstack.io
 ```
 * Explore OpenStack dashboard
 
-> http://ctrl.podX.ibmcloud.com/
+> http://ctrl.podX.openstack.io/
