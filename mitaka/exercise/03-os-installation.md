@@ -4,26 +4,26 @@
     * DATE & TIME: Set timezone and NTP server
     * SOFTWARE SELECTION: Minimal install
     * INSTALLATION DESTINATION
-      * /dev/sda1: /boot: 500 MiB
-      * /dev/mapper/vg_root-lv_swap: swap: 8192 MiB
-      * /dev/mapper/vg_root-lv_root: /: all remaining spaces
+> /dev/sda1: /boot: 500 MiB
+> /dev/mapper/vg_root-lv_swap: swap: 8192 MiB
+> /dev/mapper/vg_root-lv_root: /: all remaining spaces
     * NETWORK & HOSTNAME
       * Controller node
-        * Host name: ctrl.podX.ibmcloud.com
-        * External NIC: ens192: On: Auto connect
-          * IPv4: Addr 192.168.X.21/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.ibmcloud.com,trn.ibmcloud.com
-          * IPv6: Link-Local Only
-        * Internal NIC: ens224: On: Auto connect
-          * IPv4: Addr 192.168.X+100.21/24
-          * IPv6: Link-Local Only
+> * Host name: ctrl.podX.ibmcloud.com
+>   * External NIC: ens192: On: Auto connect
+>     * IPv4: Addr 192.168.X.21/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.ibmcloud.com,trn.ibmcloud.com
+>     * IPv6: Link-Local Only
+>   * Internal NIC: ens224: On: Auto connect
+>     * IPv4: Addr 192.168.X+100.21/24
+>     * IPv6: Link-Local Only
       * Compute node
-        * Host name: comp.podX.ibmcloud.com
-        * External NIC: ens192: On: Auto connect
-          * IPv4: Addr 192.168.X.22/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.ibmcloud.com,trn.ibmcloud.com
-          * IPv6: Link-Local Only
-        * Internal NIC: ens224: On: Auto connect
-          * IPv4: Addr 192.168.X+100.22/24
-          * IPv6: Link-Local Only
+> * Host name: comp.podX.ibmcloud.com
+>   * External NIC: ens192: On: Auto connect
+>     * IPv4: Addr 192.168.X.22/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.ibmcloud.com,trn.ibmcloud.com
+>     * IPv6: Link-Local Only
+>   * Internal NIC: ens224: On: Auto connect
+>     * IPv4: Addr 192.168.X+100.22/24
+>     * IPv6: Link-Local Only
         * ROOT PASSWORD: set
       * Reboot
 
@@ -76,9 +76,8 @@ yum update -y
 ```bash
 yum install -y open-vm-tools bash-completion
 ```
-  * Reboot
+  * Power off
 ```bash
-systemctl reboot
+systemctl poweroff
 ```
-
-*Make a backup or snapshot of both controller and compute nodes (optional)*
+  * Make a backup or snapshot of both controller and compute nodes (optional)
