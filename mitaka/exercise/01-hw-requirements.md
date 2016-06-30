@@ -25,3 +25,5 @@
   * 2 NIC cards
     * First NIC card for management interface
     * Second NIC card for internal network
+
+*VMware or KVM hypervisor maybe used for running OpenStack controller and OpenStack compute node.
