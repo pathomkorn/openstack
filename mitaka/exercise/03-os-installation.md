@@ -78,7 +78,7 @@ proxy=http://proxy.ibmcloud.com:3128/
 ```
   * Power off
 ```bash
-systemctl poweroff
+# systemctl poweroff
 ```
   * Make a backup or snapshot of both controller and compute nodes (optional)
   * Power on both controller and compute nodes
