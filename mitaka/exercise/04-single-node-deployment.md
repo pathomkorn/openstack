@@ -3,7 +3,7 @@
 * Login `controller node` as `root` user
 * Install `packstack` utility
 ```bash
-# yum install http://mirror.centos.org/centos-7/7/cloud/x86_64/openstack-mitaka/centos-release-openstack-mitaka-1-2.el7.noarch.rpm
+# yum install http://mirror.centos.org/centos/7.2.1511/cloud/x86_64/openstack-mitaka/centos-release-openstack-mitaka-1-3.el7.noarch.rpm
 # yum repolist
 # yum install openstack-packstack
 ```
