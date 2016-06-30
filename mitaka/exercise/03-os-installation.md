@@ -30,10 +30,12 @@
 # OS Post-Installation
 * Login both controller and compute nodes
   * Test network connectivity
-    * ping ctrl.podX.ibmcloud.com
-    * ping comp.podX.ibmcloud.com
-    * ping 192.168.X.1
-    * ping 192.168.X+100.1
+```bash
+ping ctrl.podX.ibmcloud.com
+ping comp.podX.ibmcloud.com
+ping 192.168.X.1
+ping 192.168.X+100.1
+```
   * Add host record itself in /etc/hosts file
   * Disable selinux (optional)
   * Disable firewalld service (optional)
