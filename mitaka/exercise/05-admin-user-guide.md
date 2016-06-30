@@ -13,7 +13,11 @@
 
 # User Guide
 
-* Login OpenStack dashboard with `admin` username and `your_password` as password
+* Login OpenStack dashboard with user you just created with admin user
+
+> http://ctrl.podX.openstack.io/
+
+* Set user's timezone
 * Create network and subnet
 * Create router
 * Create security group
@@ -36,3 +40,4 @@ Post-Creation:
 * Create volume
 * Attach volume to instance
 * Verify volume in instance
+* Logout OpenStack dashboard
