@@ -1,6 +1,6 @@
 # Hardware Requirements
 
-You may select single node or multiple node topology for your practice.
+You may select single node or multiple nodes topology for your practice.
 
 ## Single Node Topology
 ### OpenStack KVM/Docker All-in-One Node
