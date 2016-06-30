@@ -66,18 +66,19 @@ proxy=http://proxy.ibmcloud.com:3128/
 ```
   * Test YUM command
 ```bash
-yum repolist
+# yum repolist
 ```
   * Update CentOS to latest version
 ```bash
-yum update -y
+# yum update -y
 ```
   * Install VM tools and bash completion packages (optional)
 ```bash
-yum install -y open-vm-tools bash-completion
+# yum install -y open-vm-tools bash-completion
 ```
   * Power off
 ```bash
 systemctl poweroff
 ```
   * Make a backup or snapshot of both controller and compute nodes (optional)
+  * Power on both controller and compute nodes
