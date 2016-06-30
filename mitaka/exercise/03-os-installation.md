@@ -36,12 +36,12 @@ ping comp.podX.ibmcloud.com
 ping 192.168.X.1
 ping 192.168.X+100.1
 ```
-  * Add host record itself in /etc/hosts file
+  * Add host record itself in `/etc/hosts` file
 ```bash
 192.168.X.21 ctrl.podX.ibmcloud.com ctrl
 192.168.X.22 comp.podX.ibmcloud.com ctrl
 ```
-  * Disable selinux by changing SELINUX setting in /etc/selinux/config file (optional)
+  * Disable selinux by changing SELINUX setting in `/etc/selinux/config` file (optional)
 ```bash
 SELINUX=disabled
 ```
@@ -50,7 +50,7 @@ SELINUX=disabled
 systemctl stop firewalld
 systemctl disable firewalld
 ```
-  * Disable NetworkManager service
+  * Disable NetworkManager service (required for packstack)
 ```bash
 systemctl stop NetworkManager
 systemctl disable NetworkManager
@@ -60,7 +60,7 @@ systemctl disable NetworkManager
 systemctl reboot
 ```
 * Login both controller node and compute node
-  * Modify proxy setting in /etc/yum.conf if any (optional)
+  * Modify proxy setting in `/etc/yum.conf` if any (optional)
 ```bash
 proxy=http://proxy.ibmcloud.com:3128/
 ```
