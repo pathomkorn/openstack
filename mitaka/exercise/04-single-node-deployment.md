@@ -36,8 +36,8 @@ CONFIG_PROVISION_DEMO=n
 ## OpenStack Verification
 * Source OpenStack RC file
 ```bash
-cat /root/keystonerc_admin
-source /root/keystonerc_admin
+# cat /root/keystonerc_admin
+# source /root/keystonerc_admin
 ```
 * Verify OpenStack status
 ```bash
@@ -122,7 +122,10 @@ memcached:                              active
 | ID | Name | Tenant ID | Status | Task State | Power State | Networks |
 +----+------+-----------+--------+------------+-------------+----------+
 +----+------+-----------+--------+------------+-------------+----------+
-ovs-vsctl show
+```
+* Verify external bridge configuration
+```bash
+# ovs-vsctl show
     Bridge br-ex
         Port br-ex
             Interface br-ex
@@ -173,4 +176,5 @@ DEVICETYPE=ovs
 # hostnamectl set-hostname ctrl.podX.ibmcloud.com
 ```
 * Explore OpenStack dashboard
+
 > http://ctrl.podX.ibmcloud.com/
