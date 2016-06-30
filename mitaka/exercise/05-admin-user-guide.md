@@ -1,4 +1,4 @@
-## User Guide
+# Admin Guide
 * Login OpenStack dashboard with `admin` username and `your_password` as password
 
 > http://ctrl.podX.openstack.io/
@@ -7,8 +7,14 @@
 * Create project
 * Set project quota
 * Create user
-* Assign user to project
-* Create network, subnet
+* Assign user to project as member
+* Create external network and subnet
+* Logout OpenStack dashboard
+
+# User Guide
+
+* Login OpenStack dashboard with `admin` username and `your_password` as password
+* Create network and subnet
 * Create router
 * Create security group
 * Create key pair
