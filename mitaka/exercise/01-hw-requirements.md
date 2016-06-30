@@ -32,4 +32,4 @@ You may select single node or multiple nodes topology for your practice.
     * First NIC card for management interface
     * Second NIC card for internal network
 
-> VMware or KVM hypervisor maybe used for running OpenStack controller and OpenStack compute node.
+> KVM, VirtualBox, or VMware hypervisor maybe used for running OpenStack controller and OpenStack compute nodes.
