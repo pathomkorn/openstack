@@ -27,7 +27,7 @@ CONFIG_PROVISION_DEMO=n
 ```
 
 ## OpenStack Deployment
-* Run packstack with answer.txt file
+* Run packstack with `answer.txt` file
 ```bash
 # packstack --answer-file=answer.txt
 ```
@@ -93,15 +93,15 @@ memcached:                              active
 +----+------+
 +----+------+
 == Nova managed services ==
-+----+------------------+-------------------+----------+---------+-------+----------------------------+-----------------+
-| Id | Binary           | Host              | Zone     | Status  | State | Updated_at                 | Disabled Reason |
-+----+------------------+-------------------+----------+---------+-------+----------------------------+-----------------+
-| 4  | nova-cert        | ctrl.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:34.000000 | -               |
-| 5  | nova-consoleauth | ctrl.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:28.000000 | -               |
-| 6  | nova-scheduler   | ctrl.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:32.000000 | -               |
-| 7  | nova-conductor   | ctrl.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:36.000000 | -               |
-| 9  | nova-compute     | ctrl.ibmcloud.com | nova     | enabled | up    | 2016-05-11T09:41:31.000000 | -               |
-+----+------------------+-------------------+----------+---------+-------+----------------------------+-----------------+
++----+------------------+------------------------+----------+---------+-------+----------------------------+-----------------+
+| Id | Binary           | Host                   | Zone     | Status  | State | Updated_at                 | Disabled Reason |
++----+------------------+------------------------+----------+---------+-------+----------------------------+-----------------+
+| 4  | nova-cert        | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:34.000000 | -               |
+| 5  | nova-consoleauth | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:28.000000 | -               |
+| 6  | nova-scheduler   | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:32.000000 | -               |
+| 7  | nova-conductor   | ctrl.podX.ibmcloud.com | internal | enabled | up    | 2016-05-11T09:41:36.000000 | -               |
+| 9  | nova-compute     | ctrl.podX.ibmcloud.com | nova     | enabled | up    | 2016-05-11T09:41:31.000000 | -               |
++----+------------------+------------------------+----------+---------+-------+----------------------------+-----------------+
 == Nova networks ==
 +--------------------------------------+---------------+------+
 | ID                                   | Label         | Cidr |
@@ -128,27 +128,49 @@ ovs-vsctl show
             Interface br-ex
                 type: internal
 ```
-cd /etc/sysconfig/network-scripts
-cp -p ifcfg-ens192 /root
-cp -p ifcfg-ens192 ifcfg-br-ex
-vi ifcfg-ens192
+* Backup `ens192` external interface configuration file
+```bash
+# cp -p /etc/sysconfig/network-scripts/ifcfg-ens192 /root
+```
+* Create external bridge interface configuration file
+```bash
+# cp -p /etc/sysconfig/network-scripts/ifcfg-ens192 /etc/sysconfig/network-scripts/ifcfg-br-ex
+```
+* Modify `/etc/sysconfig/network-scripts/ifcfg-ens192` file to look like this
+```
 DEVICE="ens192"
 ONBOOT=yes
 TYPE=OVSPort
 DEVICETYPE=ovs
 OVS_BRIDGE=br-ex
-vi ifcfg-br-ex
-NAME="br-ex"                # edit
-DEVICE="br-ex"                # edit
-TYPE=OVSBridge                # edit
-DEVICETYPE=ovs                # add
-ovs-vsctl add-port br-ex ens192; systemctl restart network
-ovs-vsctl show
+```
+* Edit `/etc/sysconfig/network-scripts/ifcfg-br-ex` file
+```
+NAME="br-ex"
+DEVICE="br-ex"
+TYPE=OVSBridge
+```
+* Append `/etc/sysconfig/network-scripts/ifcfg-br-ex` file
+```
+DEVICETYPE=ovs
+```
+* Plug external interface to external bridge and move IP address to external bridge
+```bash
+# ovs-vsctl add-port br-ex ens192; systemctl restart network
+```
+* Verify external bridge configuration
+```bash
+# ovs-vsctl show
     Bridge br-ex
         Port br-ex
             Interface br-ex
                 type: internal
         Port "ens192"
             Interface "ens192"
-hostnamectl set-hostname ctrl.pod0X.isd.th.ibm.com
 ```
+* Reconfigure hostname
+```bash
+# hostnamectl set-hostname ctrl.podX.ibmcloud.com
+```
+* Explore OpenStack dashboard
+> http://ctrl.podX.ibmcloud.com/
