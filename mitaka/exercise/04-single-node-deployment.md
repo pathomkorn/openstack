@@ -1,6 +1,6 @@
 # Single Node Deployment
 ## Packstack Installation
-* Login `controller node` as `root` user
+* Login `ctrl.podX.ibmcloud.com` as `root` user
 * Install `packstack` utility
 ```bash
 # yum install http://mirror.centos.org/centos/7.2.1511/cloud/x86_64/openstack-mitaka/centos-release-openstack-mitaka-1-3.el7.noarch.rpm
