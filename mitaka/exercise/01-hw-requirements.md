@@ -9,6 +9,7 @@ You may select single node or multiple node topology for your practice.
   * Recommended: 2 processors and 2 GB memory plus additional memory capable to run workloads
 * Network interface card
   * 1 NIC card
+
 > In this exercise, this node will be called as ctrl.podX.openstack.io
 
 ## Multiple Nodes Topology
