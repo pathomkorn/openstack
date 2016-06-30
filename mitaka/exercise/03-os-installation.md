@@ -1,5 +1,5 @@
 # OS Installation
-* Boot from CentOS 7.2 PXE/DVD to launch installation image
+* On both `ctrl.podX.openstack.io` and `comp.podX.openstack.io`, boot from CentOS 7.2 PXE/DVD to launch installation image
   * Select `Install CentOS 7.2` from boot menu
     * DATE & TIME: Set timezone and NTP server
     * SOFTWARE SELECTION: Minimal install
@@ -9,17 +9,17 @@
       * /dev/mapper/vg_root-lv_root: /: all remaining spaces
     * NETWORK & HOSTNAME
       * Controller node
-        * Host name: `ctrl.podX.ibmcloud.com`
+        * Host name: `ctrl.podX.openstack.io`
         * External NIC: ens192: On: Auto connect
-          * IPv4: Addr 192.168.X.21/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.ibmcloud.com
+          * IPv4: Addr 192.168.X.21/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.openstack.io
           * IPv6: Link-Local Only
         * Internal NIC: ens224: On: Auto connect
           * IPv4: Addr 192.168.X+100.21/24
           * IPv6: Link-Local Only
       * Compute node
-        * Host name: `comp.podX.ibmcloud.com`
+        * Host name: `comp.podX.openstack.io`
         * External NIC: ens192: On: Auto connect
-          * IPv4: Addr 192.168.X.22/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.ibmcloud.com
+          * IPv4: Addr 192.168.X.22/24: GW 192.168.X.1: DNS 192.168.Y.21: Search podX.openstack.io
           * IPv6: Link-Local Only
         * Internal NIC: ens224: On: Auto connect
           * IPv4: Addr 192.168.X+100.22/24
@@ -28,18 +28,18 @@
       * Reboot
 
 # OS Post-Installation
-* Login both controller and compute nodes as `root` user
+* Login both `ctrl.podX.openstack.io` and `comp.podX.openstack.io` as `root` user
   * Test network connectivity
 ```bash
-# ping ctrl.podX.ibmcloud.com
-# ping comp.podX.ibmcloud.com
+# ping ctrl.podX.openstack.io
+# ping comp.podX.openstack.io
 # ping 192.168.X.1
 # ping 192.168.X+100.1
 ```
   * Modify `/etc/hosts` file
 ```bash
-192.168.X.21 ctrl.podX.ibmcloud.com ctrl
-192.168.X.22 comp.podX.ibmcloud.com comp
+192.168.X.21 ctrl.podX.openstack.io ctrl
+192.168.X.22 comp.podX.openstack.io comp
 ```
   * Disable selinux by changing SELINUX setting in `/etc/selinux/config` file (optional)
 ```bash
@@ -59,10 +59,10 @@ SELINUX=disabled
 ```bash
 # systemctl reboot
 ```
-* Login both controller node and compute node
+* Login both `ctrl.podX.openstack.io` and `comp.podX.openstack.io`
   * Modify proxy setting in `/etc/yum.conf` if any (optional)
 ```bash
-proxy=http://proxy.ibmcloud.com:3128/
+proxy=http://proxy.openstack.io:3128/
 ```
   * Test YUM command
 ```bash
@@ -80,5 +80,5 @@ proxy=http://proxy.ibmcloud.com:3128/
 ```bash
 # systemctl poweroff
 ```
-  * Make a backup or snapshot of both controller and compute nodes (optional)
-  * Power on both controller and compute nodes
+  * Make a backup or snapshot of both `ctrl.podX.openstack.io` and `comp.podX.openstack.io` (optional)
+  * Power on both `ctrl.podX.openstack.io` and `comp.podX.openstack.io`
