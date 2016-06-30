@@ -9,8 +9,7 @@ You may select single node or multiple node topology for your practice.
   * Recommended: 2 processors and 2 GB memory plus additional memory capable to run workloads
 * Network interface card
   * 1 NIC card
-
-> In this exercise, this node will be called as ctrl.podX.openstack.io
+* Hostname: `ctrl.podX.openstack.io`
 
 ## Multiple Nodes Topology
 ### OpenStack Controller + KVM/Docker Compute Node
@@ -21,8 +20,7 @@ You may select single node or multiple node topology for your practice.
   * 2 NIC cards
     * First NIC card for external network & management interface
     * Second NIC card for internal network
-
-> In this exercise, this node will be called as ctrl.podX.openstack.io
+* Hostname: `ctrl.podX.openstack.io`
 
 ### OpenStack KVM/Docker Compute Node
 * Processor and memory
@@ -32,7 +30,6 @@ You may select single node or multiple node topology for your practice.
   * 2 NIC cards
     * First NIC card for management interface
     * Second NIC card for internal network
-
-> In this exercise, this node will be called as comp.podX.openstack.io
+* Hostname: `comp.podX.openstack.io`
 
 > VMware or KVM hypervisor maybe used for running OpenStack controller and OpenStack compute node.
