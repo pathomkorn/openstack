@@ -1,4 +1,7 @@
 # Docker Overview
+
+-> ![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png) <-
+
 ## Install Docker
 * Login `comp.podX.openstack.io` as `root` user
 ```bash
@@ -45,8 +48,6 @@ Environment="HTTP_PROXY=http://proxy.openstack.io:3128/"
 ```bash
 # docker ps
 ```
-
-![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png)
 
 ## Build your own image
 ### Option 1: Using Dockerfile (More Effective, Continuous Integration & Deployment Process)
