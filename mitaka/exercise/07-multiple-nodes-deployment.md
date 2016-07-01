@@ -1,4 +1,4 @@
-# Advance Deployment
+# Multiple Nodes Deployment
 ## Packstack Installation
 * Login `ctrl.podX.openstack.io` as `root` user
 * Install `packstack` utility
@@ -21,7 +21,7 @@ CONFIG_GNOCCHI_INSTALL=n
 CONFIG_HEAT_INSTALL=y
 CONFIG_NTP_SERVERS=time.openstack.io
 CONFIG_NAGIOS_INSTALL=n
-CONFIG_COMPUTE_HOSTS=ctrl.podX.openstack.io
+CONFIG_COMPUTE_HOSTS=ctrl.podX.openstack.io,comp.podX.openstack.io
 CONFIG_KEYSTONE_ADMIN_PW=your_password
 CONFIG_NEUTRON_METERING_AGENT_INSTALL=n
 CONFIG_NEUTRON_ML2_TYPE_DRIVERS=vlan
@@ -44,7 +44,7 @@ CONFIG_PROVISION_DEMO=n
 
 Below instruction convert ens192 interface to OpenvSwitch port then plug into br-ex bridge. It also move IP address of controller node from ens192 interface to br-ex bridge.
 
-![OpenStack networking](https://access.redhat.com/webassets/avalon/d/Red_Hat_Enterprise_Linux_OpenStack_Platform-7-Networking_Guide-en-US/images/vlan-provider.jpg)
+![OpenStack networking](http://image.slidesharecdn.com/openstacknetworking-vlangre-131215080350-phpapp01/95/open-stack-networking-vlan-gre-7-638.jpg?cb=1387759997)
 
 * Backup `ens192` external interface configuration file
 ```bash
