@@ -134,6 +134,10 @@ memcached:                              active
 
 ## Post Installation
 
+Below instruction convert ens192 interface to OpenvSwitch port then plug into br-ex bridge. It also move IP address of controller node from ens192 interface to br-ex bridge.
+
+![OpenStack networking](https://access.redhat.com/webassets/avalon/d/Red_Hat_Enterprise_Linux_OpenStack_Platform-7-Networking_Guide-en-US/images/vlan-provider.jpg)
+
 * Backup `ens192` external interface configuration file
 ```bash
 # cp -p /etc/sysconfig/network-scripts/ifcfg-ens192 /root
