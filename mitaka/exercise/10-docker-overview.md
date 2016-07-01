@@ -1,6 +1,6 @@
 # Docker Overview
 
--> ![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png) <-
+![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png)
 
 ## Install Docker
 * Login `comp.podX.openstack.io` as `root` user
