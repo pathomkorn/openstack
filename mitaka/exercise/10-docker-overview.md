@@ -46,8 +46,8 @@ Environment="HTTP_PROXY=http://proxy.openstack.io:3128/"
 # docker ps
 ```
 
-# Build your own image
-## Option 1: Using Dockerfile (More Effective, Continuous Integration & Deployment Process)
+## Build your own image
+### Option 1: Using Dockerfile (More Effective, Continuous Integration & Deployment Process)
 ```bash
 # mkdir -p /myimage1/v1
 # cd /myimage1/v1
@@ -68,7 +68,7 @@ RUN date > /tmp/build-date-v2
 # docker images
 # docker run -i -t myimage1/v2 sh
 ```
-## Option 2: Using docker commit
+### Option 2: Using docker commit
 ```bash
 # docker run -it busybox sh
 # date > /tmp/build-date
