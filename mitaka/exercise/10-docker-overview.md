@@ -46,6 +46,8 @@ Environment="HTTP_PROXY=http://proxy.openstack.io:3128/"
 # docker ps
 ```
 
+![Docker logo](https://docs.mldb.ai/doc/builtin/img/logo_docker.png)
+
 ## Build your own image
 ### Option 1: Using Dockerfile (More Effective, Continuous Integration & Deployment Process)
 ```bash
