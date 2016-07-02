@@ -12,7 +12,7 @@ You may select single node or multiple nodes topology for your practice.
   * 1 NIC card
 
 ## Multiple Nodes Topology
-### OpenStack Controller + KVM/Docker Compute Node
+### OpenStack Controller + KVM Compute Node
 * Hostname: `ctrl.podX.openstack.io`
 * Processor and memory
   * Minimum: 1 processor and 3 GB memory
